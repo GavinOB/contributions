@@ -1,6 +1,7 @@
 
 # Find contributors with occupation of athlete
-athletes <- contr[grepl(".*athlete.*|.*football player.*|.*nfl player.*", contr$contributor_occupation, ignore.case = TRUE), ]
+sports.words <- ".*athlete.*|.*football player.*|.*basketball player.*|.*nba player.*|.*baseball player.*|.*mlb player.*|.*tennis player.*|.*nfl player.*|.*golfer.*|.*quarterback.*"
+athletes <- contr[grepl(sports.words, contr$contributor_occupation, ignore.case = TRUE), ]
 
 # Party counts
 athletes.parties <- table(athletes$recipient_party)
